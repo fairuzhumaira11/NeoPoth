@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoPoth - Find Your Path</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neoRed: '#DC2626',      /* The NeoPoth Primary Red */
+                        neoRedHover: '#B91C1C', /* Darker Red for Hovers */
+                        neoDark: '#1F2937',     /* Dark Gray/Black text */
+                        neoGray: '#F3F4F6',     /* Light Background */
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F9FAFB;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Nav Link Hover Effect */
+        .nav-link {
+            position: relative;
+            color: #4B5563;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #DC2626;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile Menu Toggle */
+        #mobile-menu.hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 py-3">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between">
+                <a class="text-2xl font-bold tracking-wide text-neoRed" href="landing_page.html">
+                    NEOPOTH
+                </a>
+
+                <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <ul class="flex items-center gap-8">
+                        <li><a class="nav-link font-medium" href="#">Home</a></li>
+                        <li><a class="nav-link font-medium" href="#about">About Us</a></li>
+                        <li><a class="nav-link font-medium" href="#categories">Categories</a></li>
+                    </ul>
+
+                    <div class="flex items-center gap-4">
+                        <a href="sign_in.html" class="text-gray-600 font-semibold hover:text-neoRed transition">
+                            Sign In
+                        </a>
+                        <a href="sign_up.html"
+                            class="px-6 py-2 rounded-full bg-neoRed text-white hover:bg-neoRedHover shadow-md transition font-semibold">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <ul class="flex flex-col gap-4 mb-6">
+                    <li><a class="nav-link font-medium block" href="#">Home</a></li>
+                    <li><a class="nav-link font-medium block" href="#about">About Us</a></li>
+                    <li><a class="nav-link font-medium block" href="#categories">Categories</a></li>
+                </ul>
+                <div class="flex flex-col gap-3">
+                    <a href="sign_in.html" class="text-gray-600 font-semibold hover:text-neoRed transition text-center">
+                        Sign In
+                    </a>
+                    <a href="sign_up.html"
+                        class="px-6 py-2 rounded-full bg-neoRed text-white hover:bg-neoRedHover shadow-md transition font-semibold text-center">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative bg-neoDark text-white pt-20 pb-24 overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-red-600 rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-600 rounded-full opacity-10 blur-3xl">
+        </div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2">
+                    <span
+                        class="inline-block py-1 px-3 rounded bg-red-900/30 text-red-300 text-sm font-semibold mb-4 border border-red-800">
+                        #1 Student Job Platform
+                    </span>
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Find Work That <br> Fits Your <span class="text-neoRed">Study Life</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg mb-8 max-w-lg">
+                        NeoPoth connects students with verified employers for secure part-time jobs, tuition, and
+                        internships.
+                    </p>
+
+                    <div class="bg-white p-2 rounded-xl shadow-lg flex flex-col md:flex-row gap-2 max-w-lg">
+                        <div class="flex-1 flex items-center px-3">
+                            <i class="fas fa-search text-gray-400 mr-3"></i>
+                            <label>
+                                <input type="text" class="w-full text-gray-700 outline-none"
+                                    placeholder="What are you looking for?">
+                            </label>
+                        </div>
+                        <button
+                            class="bg-neoRed text-white px-6 py-3 rounded-lg font-semibold hover:bg-neoRedHover transition">
+                            Search
+                        </button>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap gap-8 text-sm text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-neoRed"></i> Verified Jobs
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-neoRed"></i> Secure Payment
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 text-center">
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 bg-neoRed rounded-2xl rotate-3 opacity-20 transform translate-x-4 translate-y-4">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Students Collaborating"
+                            class="relative rounded-2xl shadow-2xl w-full object-cover h-[400px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800">Popular Categories</h2>
+                <p class="text-gray-500 mt-2">Explore the most demanding job sectors for students</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="group bg-gray-50 hover:bg-white p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-neoRed text-2xl mb-6 group-hover:bg-neoRed group-hover:text-white transition-colors">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Web Development</h3>
+                    <p class="text-gray-500 text-sm mb-4">Frontend, Backend, and Full-stack opportunities.</p>
+                    <span class="text-neoRed font-semibold text-sm group-hover:underline">Browse 120+ Jobs &rarr;</span>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Graphics & UI</h3>
+                    <p class="text-gray-500 text-sm mb-4">Logo design, UI kits, and social media assets.</p>
+                    <span class="text-blue-600 font-semibold text-sm group-hover:underline">Browse 85+ Jobs
+                        &rarr;</span>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Tuition</h3>
+                    <p class="text-gray-500 text-sm mb-4">English medium, Bangla medium, and Skill sharing.</p>
+                    <span class="text-green-600 font-semibold text-sm group-hover:underline">Browse 200+ Jobs
+                        &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="About NeoPoth" class="rounded-2xl shadow-lg w-full">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <span class="text-neoRed font-bold uppercase text-sm tracking-wider">About Us</span>
+                    <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Bridging the Gap Between Campus & Career</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        NeoPoth was born out of a simple need: Students want to be financially independent and gain
+                        experience, and local businesses need talent.
+                        We created a safe ecosystem where university students can find verified work without
+                        compromising their studies.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-neoRed mr-3 text-xl"></i>
+                            <span><strong>Verified Users</strong> via University ID</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-neoRed mr-3 text-xl"></i>
+                            <span><strong>Secure Payment</strong> Protection</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-900 text-white text-center">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Earning?</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-lg">
+                Join thousands of students who are already financially independent.
+                Create your profile today and start applying.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="sign_in.html"
+                    class="bg-neoRed text-white px-8 py-3 rounded-full font-bold hover:bg-neoRedHover shadow-lg hover:shadow-red-500/50 transition transform hover:-translate-y-1">
+                    Create Account
+                </a>
+                <a href="#"
+                    class="bg-transparent border border-gray-600 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition">
+                    Browse Jobs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-neoDark text-gray-400 pt-16 pb-8 border-t border-gray-800 mt-auto">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+                <div class="lg:col-span-1">
+                    <h3 class="text-white text-2xl font-bold mb-4 tracking-wider">NEOPOTH</h3>
+                    <p class="text-sm leading-relaxed mb-4">
+                        A platform designed to bridge the gap between students and the professional world.
+                        Safe, secure, and reliable.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">For Students</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-neoRed transition">Browse Jobs</a></li>
+                        <li><a href="#" class="hover:text-neoRed transition">Skill Tests</a></li>
+                        <li><a href="#" class="hover:text-neoRed transition">Student Success</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-neoRed transition">Post a Job</a></li>
+                        <li><a href="#" class="hover:text-neoRed transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-neoRed transition">Verification</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Newsletter</h4>
+                    <form class="flex gap-2">
+                        <label>
+                            <input type="email" placeholder="Enter email"
+                                class="bg-gray-800 border border-gray-700 text-white px-4 py-2 rounded-lg w-full focus:outline-none focus:border-neoRed">
+                        </label>
+                        <button class="bg-neoRed text-white px-4 py-2 rounded-lg hover:bg-neoRedHover transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-gray-800 text-sm">
+                <p>&copy; 2025 NeoPoth. Built with <i class="fas fa-heart text-neoRed"></i> for Students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
